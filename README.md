@@ -3,6 +3,8 @@
 This project tries to determine the best area for students to live in Zurich based on available flats listed on [immoscout24.ch](https://www.immoscout24.ch)
 using a defined Score metric which reflects how great a flat is and the price itself.
 
+*Note that this just an exercise on how to aquire, store and evaluate web data using Python and BigQuery. The significance of the score function is also up for debate.*
+
 # Overview
 This project extracts and preprocesses the provided data on the website (address, price, floor area, number of rooms and price) and pushes it to Google BigQuery.
 As it is important for students to get to university quickly (in order to sleep longer in the morning), the cycling time and cycling distance attributes are 
