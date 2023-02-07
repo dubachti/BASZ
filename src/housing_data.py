@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import json
+from config import API_key
 
 ADDRESS = 'ADDRESS'
 STREET = 'STREET'
@@ -42,7 +43,7 @@ class HousingData():
             for apt in apts:
                 apt_obj = {}
 
-                # parse addres field
+                # parse address field
                 try:
                     address_info = apt.find(*attributes[ADDRESS]).text
                     address_info = address_info.split(', ')
@@ -103,7 +104,7 @@ class HousingData():
             if not i%(n//10): print('/', end='')
 
             start = street.replace(' ', '+') + f'+{zip_num}+Zürich'
-            link = f'https://maps.googleapis.com/maps/api/directions/json?origin={start}&destination={dest}&mode={mode}&key=*****' # insert API key
+            link = f'https://maps.googleapis.com/maps/api/directions/json?origin={start}&destination={dest}&mode={mode}&key={API_key}'
             try:
                 req = requests.get(link)
                 results = json.loads(req.content)

@@ -1,6 +1,6 @@
 import pandas as pd
 from google.cloud import bigquery
-from src.housing_data import STREET, ZIP, ROOMS, SPACE, PRICE, CYCLE_TIME, CYCLE_DIST
+from housing_data import STREET, ZIP, ROOMS, SPACE, PRICE, CYCLE_TIME, CYCLE_DIST
 
 # submit df to bigquery
 def bq_push(client: bigquery.Client,df: pd.DataFrame) -> None:
